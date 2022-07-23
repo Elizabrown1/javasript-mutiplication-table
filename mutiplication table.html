@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUTIPLICATION TABLE</title>
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    
+   <h1 class="text-center mt-5" id="header">MULTIPLICATION TABLE</h1> 
+    
+
+<div class=" col-6 bg-light mb-5 align-center p-5 mx-auto mt-5 shadow" style="border-radius: 30px; margin-top: 60px; ">
+    
+        <div class="mt-5">
+    <input class="form-control w-25 shadow rounded mt-5 mb-2" id="input1" placeholder="column" type="number">
+    <input class="form-control w-25 shadow rounded " id="input2" placeholder="row" type="number">
+</div>
+    <button class="btn btn-success mt-3 mb-5" id="display" onclick="displayMe()">Display</button>
+    <div id="as" class="btn mt-3 mb-5 ">
+        <select id="add" class="btn btn-success text-white">
+            <option value="*">mutiplication</option>
+            <option value="+">addition</option>
+            <option value="-">subtraction</option>
+            <option value="/">division</option>
+        </select>
+     </div>
+    
+    </div>
+
+
+    
+    <div id="ds">
+    
+</div>
+   
+
+</div>
+</div>
+<div  id="hid" class=" col-6 bg-light mb-5 align-center p-5 mx-auto shadow " style="border-radius: 30px; font-size: larger;"></div>
+<script>
+    function displayMe() {
+        var s ="";
+       s+="<table>"
+        for(i =1; i<=input1.value; i++){
+            s+="<td>";
+            s+="Table "+ i;
+            s+="<table border='4px'solid black>"
+
+            for(a=1; a<=input2.value; a++){
+                s+="<tr><td>"+(i+add.value+a)+ "="+
+                eval(i+add.value+a)+"<td><tr>"
+            }
+            s+="</table></td>"
+        }
+        s=="</tr></Table>"
+        hid.innerHTML=s
+    }
+</script>
+
+
+</body>
+</html>
